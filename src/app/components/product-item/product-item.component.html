@@ -1,0 +1,11 @@
+<div class="product-container">
+  <img [src]="product.url" class="product-image" (click)="productDetail()">
+  <div class="select-input">
+    <h3>{{product.name}}</h3>
+    <h3>{{product.price  | currency}}</h3>
+    <button mat-raised-button color="accent" (click)="addToCard(product)">Add to cart</button>
+    <select name="quantities" id="quantities" [(ngModel)]="amount" >
+      <option *ngFor="let number of quatity" [value]="number">{{number}}</option>
+    </select>
+  </div>
+</div>

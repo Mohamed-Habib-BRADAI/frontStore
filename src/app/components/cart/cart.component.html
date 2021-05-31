@@ -1,0 +1,24 @@
+<div class="cart-container">
+  <div class="cart-panel">
+    <div class="cart-item" *ngFor="let item of items">
+      <img
+        [src]=item.url>
+      <div class="cart-item-details">
+        <h3>{{item.name}}</h3>
+        <h3>{{item.price}}</h3>
+        <input type="number" [(ngModel)]="item.amount" (ngModelChange)="deleteItem(item)" >
+      </div>
+    </div>
+    <h2>{{totalPrice() |currency}}</h2>
+  </div>
+
+  <div class="form-margin">
+    <form (ngSubmit)="onSubmit()">
+      <input type="text" name="fullName" required minlength="3" [(ngModel)]="fullName" placeholder="(minimum 3 character)">
+      <textarea type="text" name="adress" required minlength="6" [(ngModel)]="adress" placeholder="(minimum 6 character)"></textarea>
+      <input type="number" name="creditCard" required maxlength="16" minlength="16"  placeholder="(16-digit number)"[(ngModel)]="creditCard">
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
+</div>
