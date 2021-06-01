@@ -16,15 +16,15 @@
     <form (ngSubmit)="onSubmit()">
       <mat-form-field >
         <mat-label>Full name</mat-label>
-        <input matInput type="text" required minlength="3" [(ngModel)]="fullName" placeholder="(minimum 3 character)">
+        <input matInput type="text" required minlength="3" [(ngModel)]="fullName" name="fullName" placeholder="(minimum 3 character)">
       </mat-form-field>
       <mat-form-field >
         <mat-label>Adress</mat-label>
-        <textarea matInput type="text" required minlength="6" [(ngModel)]="adress" placeholder="(minimum 6 character)"></textarea>
+        <textarea matInput type="text" required minlength="6" [(ngModel)]="adress" name="adress" placeholder="(minimum 6 character)"></textarea>
       </mat-form-field>
       <mat-form-field >
         <mat-label>Credit Card number</mat-label>
-        <input matInput type="number" required maxlength="16" minlength="16"  placeholder="(16-digit number)"[(ngModel)]="creditCard">
+        <input matInput type="number" required maxlength="16" minlength="16"  name="creditCard" placeholder="(16-digit number)"[(ngModel)]="creditCard">
       </mat-form-field>
       <button mat-raised-button color="#33B5E5" type="submit" >Submit</button>
 
