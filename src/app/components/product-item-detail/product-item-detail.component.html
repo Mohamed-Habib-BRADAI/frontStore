@@ -5,11 +5,11 @@
     <h6> {{product.price | currency}}</h6>
     <h6> {{product.description}}</h6>
     <div class ='select-input'>
-      <select name="quantities" id="quantities" [(ngModel)]="amount" >
+      <select name="quantities" id="quantities" [(ngModel)]="amount" class ='select-input'>
         <option *ngFor="let number of quatity" [value]="number">{{number}}</option>
       </select>
     </div>
-    <button mat-raised-button color="accent" (click)="addToCard(product)">Add to cart</button>
+    <button mat-raised-button color="#33B5E5" (click)="addToCard(product)">Add to cart</button>
     <div class="back-link">
       <a (click)="back()"> Back to product list</a>
     </div>

@@ -3,9 +3,9 @@
   <div class="select-input">
     <h3>{{product.name}}</h3>
     <h3>{{product.price  | currency}}</h3>
-    <button mat-raised-button color="accent" (click)="addToCard(product)">Add to cart</button>
-    <select name="quantities" id="quantities" [(ngModel)]="amount" >
+    <select name="quantities" id="quantities" [(ngModel)]="amount" class="select-input" >
       <option *ngFor="let number of quatity" [value]="number">{{number}}</option>
     </select>
+    <button mat-raised-button color="#33B5E5" (click)="addToCard(product)" class="select-input">Add to cart</button>
   </div>
 </div>

@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CartComponent} from './components/cart/cart.component';
@@ -10,12 +9,15 @@ import {ProductItemComponent} from './components/product-item/product-item.compo
 import {ProductListComponent} from './components/product-list/product-list.component';
 import {HeaderComponent} from './layout/header/header.component';
 import {FormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,10 @@ import {HttpClientModule} from '@angular/common/http';
     MatFormFieldModule,
     MatSelectModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
