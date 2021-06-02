@@ -9,6 +9,7 @@ import {Order} from '../../models/order.model';
   styleUrls: ['./confirmation.component.scss']
 })
 export class ConfirmationComponent implements OnInit {
+  
   currentOrder: Order;
 
   constructor(private router: Router, private cartService: CartService) {
@@ -18,6 +19,7 @@ export class ConfirmationComponent implements OnInit {
     this.currentOrder = this.cartService.getCurrentOrder();
   }
 
+  // Reset and redirect
   home() {
     this.cartService.resetCart();
     this.cartService.resetCurrentOrder();
