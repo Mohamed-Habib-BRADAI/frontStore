@@ -29,7 +29,7 @@ export class ProductItemDetailComponent implements OnInit {
 
   addToCard(product: Product) {
     window.alert('Added to cart!');
-    product.amount = this.amount;
+    product.amount = product.amount ? product.amount + this.amount : this.amount;
     this.cartService.addToCart(product);
   }
 

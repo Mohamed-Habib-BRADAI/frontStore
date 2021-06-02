@@ -13,7 +13,7 @@
   </div>
 
   <div class="form-margin">
-    <form (ngSubmit)="onSubmit()">
+    <form #form="ngForm"(ngSubmit)="onSubmit()">
       <mat-form-field >
         <mat-label>Full name</mat-label>
         <input matInput type="text" required minlength="3" [(ngModel)]="fullName" name="fullName" placeholder="(minimum 3 character)">
@@ -24,9 +24,9 @@
       </mat-form-field>
       <mat-form-field >
         <mat-label>Credit Card number</mat-label>
-        <input matInput type="number" required maxlength="16" minlength="16"  name="creditCard" placeholder="(16-digit number)"[(ngModel)]="creditCard">
+        <input matInput type="text" required maxlength="16" minlength="16"  name="creditCard" placeholder="(16-digit number)"[(ngModel)]="creditCard">
       </mat-form-field>
-      <button mat-raised-button color="#33B5E5" type="submit" >Submit</button>
+      <button mat-raised-button color="#33B5E5" type="submit" [disabled]="form.invalid">Submit</button>
 
     </form>
 

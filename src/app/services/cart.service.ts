@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Product} from "../models/product.model";
-import {Order} from "../models/order.model";
+import {Product} from '../models/product.model';
+import {Order} from '../models/order.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,10 @@ export class CartService {
   }
 
   addToCart(product: Product) {
-    this.items.push(product);
+    const products = this.items.filter(item => item.id === product.id);
+    if (products.length === 0) {
+      this.items.push(product);
+    }
   }
 
   resetCart() {

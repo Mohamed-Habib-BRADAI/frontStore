@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 export class ProductItemComponent implements OnInit {
   @Input() public product: Product;
   quatity = [];
-  amount = 1;
+  amount = '1';
 
   constructor(private cartService: CartService, private router: Router) {
   }
@@ -24,7 +24,8 @@ export class ProductItemComponent implements OnInit {
 
   addToCard(product: Product) {
     window.alert('Added to cart!');
-    product.amount = this.amount;
+    const amount = parseInt(this.amount, 10);
+    product.amount = product.amount ? product.amount + amount : amount;
     this.cartService.addToCart(product);
   }
 
