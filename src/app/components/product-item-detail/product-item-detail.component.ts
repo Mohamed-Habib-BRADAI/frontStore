@@ -12,8 +12,8 @@ import {Location} from '@angular/common';
 })
 export class ProductItemDetailComponent implements OnInit {
   private product: Product;
-  quatity = [];
-  amount = 1;
+  quantity = [];
+  amount = '1';
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService,
               private cartService: CartService, private location: Location) {
@@ -23,13 +23,14 @@ export class ProductItemDetailComponent implements OnInit {
     const id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
     this.product = this.productsService.getProduct(id);
     for (let i = 1; i <= 10; i++) {
-      this.quatity.push(i);
+      this.quantity.push(i);
     }
   }
 
   addToCard(product: Product) {
     window.alert('Added to cart!');
-    product.amount = product.amount ? product.amount + this.amount : this.amount;
+    const amount = parseInt(this.amount, 10);
+    product.amount = product.amount ? product.amount + amount : amount;
     this.cartService.addToCart(product);
   }
 

@@ -4,7 +4,7 @@
     <h3>{{product.name}}</h3>
     <h3>{{product.price  | currency}}</h3>
     <select name="quantities" id="quantities" [(ngModel)]="amount" class="select-input" >
-      <option *ngFor="let number of quatity" [value]="number">{{number}}</option>
+      <option *ngFor="let number of quantity" [value]="number">{{number}}</option>
     </select>
     <button mat-raised-button color="#33B5E5" (click)="addToCard(product)" class="select-input">Add to cart</button>
   </div>

@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class ProductItemComponent implements OnInit {
   @Input() public product: Product;
-  quatity = [];
+  quantity = [];
   amount = '1';
 
   constructor(private cartService: CartService, private router: Router) {
@@ -18,7 +18,7 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit() {
     for (let i = 1; i <= 10; i++) {
-      this.quatity.push(i);
+      this.quantity.push(i);
     }
   }
 
